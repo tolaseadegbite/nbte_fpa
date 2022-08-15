@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  authenticate :user, lambda { |u| u.admin == true } do
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  end
+  root 'static_pages#home'
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_scope :user do
+    get 'users', to: 'devise/sessions#new'
+  end
 end

@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: laboratory_equipments
+#
+#  id            :bigint           not null, primary key
+#  name          :string
+#  specification :text
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  laboratory_id :integer
+#
+
+one:
+  name: MyString
+  specification: MyText
+  laboratory_id: 1
+
+two:
+  name: MyString
+  specification: MyText
+  laboratory_id: 1
