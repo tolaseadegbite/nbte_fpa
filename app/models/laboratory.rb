@@ -23,7 +23,7 @@
 #
 class Laboratory < ApplicationRecord
   belongs_to :department
-  validates :name, :nbte_number, :nbte_requirement, :unit, :department_id, presence: true
+  validates :name, :nbte_number, :nbte_requirement, :unit, :department_id, :gap, :cost, presence: true
 
   has_many :laboratory_equipments, dependent: :destroy
   end

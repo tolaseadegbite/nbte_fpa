@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Nbte FPA</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%# <meta name="viewport" content="width=device-width,initial-scale=1"> %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,12 +14,15 @@
   </head>
 
   <body>
+    <%= render "layouts/navbar" %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <div class="container my-4">
+      <%= yield %>
+    </div>
   </body>
 </html>

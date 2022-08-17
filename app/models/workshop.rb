@@ -22,7 +22,8 @@
 #  fk_rails_...  (department_id => departments.id)
 #
 class Workshop < ApplicationRecord
-    validates :name, :specification, :workshop_id, presence: true
+    belongs_to :department
+    validates :name, :nbte_number, :nbte_requirement, :unit, :department_id, :gap, :cost, presence: true
 
-    belongs_to :workshop
+    has_many :workshop_equipments, dependent: :destroy
 end

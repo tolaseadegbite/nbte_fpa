@@ -10,4 +10,7 @@
 #  workshop_id   :integer
 #
 class WorkshopEquipment < ApplicationRecord
+    validates :name, :specification, :workshop_id, presence: true
+
+    belongs_to :laboratory
 end

@@ -1,0 +1,5 @@
+<h1>Schools</h1>
+<hr>
+<% @schools.each do |school| %>
+    <h2><%= link_to school.name, school %></h2>
+<% end %>
