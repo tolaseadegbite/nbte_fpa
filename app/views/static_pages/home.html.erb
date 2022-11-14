@@ -1,10 +1,14 @@
-<h1>Hello, world</h1>
 <% if current_user %>
-    <p><%= current_user.email %><p>
-    <p><%= current_user.name %></p>
-    <%= link_to "Account settings", edit_user_registration_path %>
-    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, <%= current_user.name %></h1>
+        <p class="lead">Welcome to The Federal Polytechnic, Ado-Ekiti Facility Management System.</p>
+        <hr class="my-4">
+        <p></p>
+        <p class="lead">
+            Click the button below on visi the admin page
+            <a class="btn btn-primary btn-sm" href="http://127.0.0.1:3000/admin" role="button">Go-to Admin Panel</a>
+        </p>
+    </div>
 <% else %>
-    <%= link_to "Sign up", new_user_registration_path %>
     <%= link_to "Sign in", new_user_session_path %>
 <% end %>
