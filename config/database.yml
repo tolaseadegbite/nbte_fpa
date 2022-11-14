@@ -85,6 +85,5 @@ test:
 production:
   <<: *default
   database: nbte_fpa_production
-  url: <%= ENV["MY_APP_DATABASE_URL"] %>
   username: nbte_fpa
   password: <%= ENV["NBTE_FPA_DATABASE_PASSWORD"] %>
