@@ -6,7 +6,7 @@
         <p></p>
         <p class="lead">
             Click the button below on visi the admin page
-            <a class="btn btn-primary btn-sm" href="http://127.0.0.1:3000/admin" role="button">Go-to Admin Panel</a>
+            <%= link_to "Go-to Admin Panel", rails_admin_path, class: "btn btn-primary btn-sm" %>
         </p>
     </div>
 <% else %>
