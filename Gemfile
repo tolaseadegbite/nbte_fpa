@@ -14,6 +14,7 @@ gem "pg", "~> 1.1"
 
 gem "devise"
 gem 'rails_admin', '~> 3.0'
+gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 # gem "administrate"
 
 # Use the Puma web server [https://github.com/puma/puma]

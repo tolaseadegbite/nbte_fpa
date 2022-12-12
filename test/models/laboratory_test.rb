@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: workshops
+# Table name: laboratories
 #
 #  id            :bigint           not null, primary key
 #  name          :string
@@ -8,9 +8,10 @@
 #  updated_at    :datetime         not null
 #  department_id :integer
 #
-class Workshop < ApplicationRecord
-    belongs_to :department
-    validates :name, presence: true
+require "test_helper"
 
-    has_many :workshop_equipments, dependent: :destroy
+class LaboratoryTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_14_233853) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_120806) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,24 +23,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_14_233853) do
   end
 
   create_table "laboratories", force: :cascade do |t|
-    t.bigint "department_id", null: false
-    t.string "name"
-    t.integer "unit"
-    t.integer "nbte_requirement"
-    t.integer "nbte_number"
-    t.integer "gap"
-    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["department_id"], name: "index_laboratories_on_department_id"
+    t.integer "department_id"
+    t.string "name"
   end
 
   create_table "laboratory_equipments", force: :cascade do |t|
-    t.string "name"
-    t.text "specification"
     t.integer "laboratory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nbte_requirement"
+    t.integer "number_required"
+    t.string "model"
+    t.integer "quantity_available"
+    t.integer "available_gap"
+    t.bigint "cost"
+    t.string "specification"
+    t.string "equipment_type"
   end
 
   create_table "office_facilities", force: :cascade do |t|
@@ -85,30 +85,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_14_233853) do
   end
 
   create_table "workshop_equipments", force: :cascade do |t|
-    t.string "name"
-    t.text "specification"
     t.integer "workshop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nbte_requirement"
+    t.integer "number_required"
+    t.string "model"
+    t.integer "quantity_available"
+    t.integer "available_gap"
+    t.bigint "cost"
+    t.string "specification"
+    t.string "equipment_type"
   end
 
   create_table "workshops", force: :cascade do |t|
-    t.bigint "department_id", null: false
-    t.string "name"
-    t.integer "unit"
-    t.integer "nbte_requirement"
-    t.integer "nbte_number"
-    t.integer "gap"
-    t.integer "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["department_id"], name: "index_workshops_on_department_id"
+    t.integer "department_id"
+    t.string "name"
   end
 
   add_foreign_key "departments", "schools"
-  add_foreign_key "laboratories", "departments"
   add_foreign_key "office_facilities", "offices"
   add_foreign_key "offices", "schools"
   add_foreign_key "schools", "users"
-  add_foreign_key "workshops", "departments"
 end

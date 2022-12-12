@@ -8,9 +8,10 @@
 #  updated_at    :datetime         not null
 #  department_id :integer
 #
-class Workshop < ApplicationRecord
-    belongs_to :department
-    validates :name, presence: true
+require "test_helper"
 
-    has_many :workshop_equipments, dependent: :destroy
+class WorkshopTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
