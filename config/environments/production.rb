@@ -4,7 +4,6 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.hosts << "nbtefpa-production.up.railway.app"
   # Code is not reloaded between requests.
-  # config.hosts << "nbtefpa.up.railway.app"
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
