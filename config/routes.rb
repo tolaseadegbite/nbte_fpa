@@ -3,12 +3,15 @@ Rails.application.routes.draw do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   end
   # get '/dashboard' => "dashboard#index", :as => :dashboard
-  root 'static_pages#home'
+  root 'departments#index'
 
   devise_for :users
   devise_scope :user do
     get 'users', to: 'devise/sessions#new'
     # root to: 'devise/sessions#new'
   end
-  resources :schools
+  resources :departments do
+    resources :laboratories
+    resources :workshops
+  end
 end

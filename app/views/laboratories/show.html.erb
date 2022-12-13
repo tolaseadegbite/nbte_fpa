@@ -1,0 +1,38 @@
+<small><%= link_to "Home", root_path %> / <%= link_to @department.name, @department %> / <%= @laboratory.name %></small>
+
+<h1><%= @laboratory.name %></h1>
+<hr>
+<h2>Laboratory Equipments</h2>
+<% if @equipments.count > 0 %>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-secondary">
+            <tr>
+                <th scope="col">NBTE requirements</th>
+                <th scope="col">Number required</th>
+                <th scope="col">Model</th>
+                <th scope="col">Quantity available</th>
+                <th scope="col">Available gap</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Specification</th>
+                <th scope="col">Equipment type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @equipments.each do |equipment| %>
+                    <tr>
+                        <td><%= equipment.nbte_requirement %></td>
+                        <td><%= equipment.number_required %></td>
+                        <td><%= equipment.model %></td>
+                        <td><%= equipment.quantity_available %></td>
+                        <td><%= equipment.available_gap %></td>
+                        <td><%= equipment.cost %></td>
+                        <td><%= equipment.specification %></td>
+                        <td><%= equipment.equipment_type %></td>
+                    </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% else %>
+    <h4>There is no record</h4>
+<% end %>

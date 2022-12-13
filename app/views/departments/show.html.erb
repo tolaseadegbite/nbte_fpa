@@ -1,0 +1,22 @@
+<small><%= link_to "Home", root_path %> / <%= @department.name %></small>
+
+<h1><%= @department.name %></h1>
+<hr>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Laboratories</h2>
+        <hr>
+        <% @laboratories.each do |laboratory| %>
+            <h4><%= link_to laboratory.name, department_laboratory_path(@department, laboratory) %></h4>
+        <% end %>
+    </div>
+    
+    <div class="col-md-6">
+        <h2>Workshops</h2>
+        <hr>
+        <% @workshops.each do |workshop| %>
+            <h4><%= link_to workshop.name, department_workshop_path(@department, workshop) %></h4>
+        <% end %>
+    </div>
+</div>
